@@ -26,3 +26,4 @@ class CircleShape(pygame.sprite.Sprite):
         if hitRange >= distance:
             return True
         return False
+    
