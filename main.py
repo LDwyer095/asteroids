@@ -2,11 +2,11 @@
 # the open-source pygame library
 # throughout this file
 import pygame
-import asteroidfield
 from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from circleshape import CircleShape
 
 
 def main():
@@ -35,6 +35,11 @@ def main():
         for x in updatable:
             x.update(dt)
         
+        for x in asteroids:
+            if x.collisionDetection(player):
+                print("Game Over!")
+                raise SystemExit
+
         screen.fill("black")
 
         for x in drawable:
