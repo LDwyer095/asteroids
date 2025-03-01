@@ -43,10 +43,10 @@ def main():
                 print("Game Over!")
                 raise SystemExit
             
-        for asteroid in asteroids:
+        for ast in asteroids:
             for bullet in shots:
-                if asteroid.collisionDetection(bullet):
-                    asteroid.kill()
+                if ast.collisionDetection(bullet):
+                    ast.split()
                     bullet.kill()
 
         screen.fill("black")
